@@ -16,7 +16,7 @@ void heapify(vector<int> &a,int n,int i){
     }
 }
 void heap_sort(vector<int> &a){
-    
+    heap_build(a);
     for(int i= a.size()-1; i>=0;i--){
         swap(a[i],a[0]);
         heapify(a,i ,0);
@@ -29,7 +29,7 @@ void heap_build(vector<int> &a){
 }
 int main(){
     vector<int> a={10,30,50,20,35,15};
-    heap_build(a);
+    
     heap_sort(a);
     for(int i=0;i<a.size();i++){
         cout<<a[i]<<" ";

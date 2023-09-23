@@ -22,8 +22,8 @@ public:
         }
         // vector to store shortest distance firstly intialize all value to infinite
         vector<int> dist(V);
-        vector<int>prev(V,S);
-        prev[S]=-1;
+        vector<int> prev(V, S);
+        prev[S] = -1;
         for (int i = 0; i < V; i++)
         {
             dist[i] = INT_MAX;
@@ -56,7 +56,7 @@ public:
 
                     // distance update
                     dist[neighbour.first] = nodeDistance + neighbour.second;
-                    prev[neighbour.first]=topNode;
+                    prev[neighbour.first] = topNode;
                     // record push
                     st.insert(make_pair(nodeDistance + neighbour.second, neighbour.first));
                 }
