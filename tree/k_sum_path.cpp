@@ -108,9 +108,7 @@ class Solution{
          int temp=0;
           for(int i=ans.size()-1;i>=0;i--){
               temp+=ans[i];
-              if(temp==k){c++;}
-              
-            
+              if(temp==k){c++;}   
           }
       
       ans.pop_back();
