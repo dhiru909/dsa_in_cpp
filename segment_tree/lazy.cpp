@@ -2,12 +2,12 @@
 using namespace std; 
 class ST {
 	vector<int> seg, lazy; 
-public: 
+	public: 
 	ST(int n) {
 		seg.resize(4 * n); 
 		lazy.resize(4 * n); 
 	}
-public: 
+	public: 
 	void build(int ind, int low, int high, int arr[]) {
 		if(low == high) {
 			seg[ind] = arr[low];
@@ -18,7 +18,7 @@ public:
 		build(2*ind+2, mid+1, high, arr); 
 		seg[ind] = seg[2*ind+1] + seg[2*ind+2];
 	}
-public:
+	public:
 	void update(int ind, int low, int high, int l, int r, 
 		int val) {
 		// update the previous remaining updates 
@@ -114,10 +114,10 @@ public:
 	void update(int ind, int low, int high, int l, int r, 
 		int val) {
 		// update the previous remaining updates 
-		// and propogate downwards 
+		// and propagate downwards 
 		if(lazy[ind] != 0) {
 			seg[ind] += lazy[ind]; 
-			// propogate the lazy update downwards
+			// propagate the lazy update downwards
 			// for the remaining nodes to get updated 
 			if(low != high) {
 				lazy[2*ind+1] += lazy[ind]; 
