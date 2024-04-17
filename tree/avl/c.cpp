@@ -159,7 +159,7 @@ public:
 
 int main()
 {
-    int ip[MAXN];
+    int ip[MANX];
 
     int t;
     cin >> t;

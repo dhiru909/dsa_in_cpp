@@ -5,6 +5,7 @@ class ST {
 	public: 
 	ST(int n) {
 		seg.resize(4 * n); 
+		// seg.resize(2*(2<<(int)(log2(n)+0.5)) - 1); 
 		lazy.resize(4 * n); 
 	}
 	public: 

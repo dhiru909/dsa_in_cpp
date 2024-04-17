@@ -165,7 +165,7 @@ public:
 
 int main()
 {   cout <<"start: ";
-	int ip[MAXN];
+	int ip[MANX];
     
     int t;
     cin>>t;
