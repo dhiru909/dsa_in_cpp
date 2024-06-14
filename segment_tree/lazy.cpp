@@ -23,10 +23,10 @@ class ST {
 	void update(int ind, int low, int high, int l, int r, 
 		int val) {
 		// update the previous remaining updates 
-		// and propogate downwards 
+		// and propagate downwards 
 		if(lazy[ind] != 0) {
 			seg[ind] += (high - low + 1) * lazy[ind]; 
-			// propogate the lazy update downwards
+			// propagate the lazy update downwards
 			// for the remaining nodes to get updated 
 			if(low != high) {
 				lazy[2*ind+1] += lazy[ind]; 
@@ -47,14 +47,14 @@ class ST {
 		// l low high r 
 		if(low>=l && high <= r) {
 			seg[ind] += (high - low + 1) * val; 
-			// if a leaf node, it will have childrens
+			// if not a leaf node, it will have childrens
 			if(low != high) {
 				lazy[2*ind+1] += val; 
 				lazy[2*ind+2] += val; 
 			}
 			return; 
 		}
-		// last case has to be no overlap case
+		// last case has to be partial overlap case
 		int mid = (low + high) >> 1; 
 		update(2*ind+1, low, mid, l, r, val);
 		update(2*ind+2, mid+1, high, l, r, val); 
@@ -67,7 +67,7 @@ public:
 		// as the node will stay fresh and updated 
 		if(lazy[ind] != 0) {
 			seg[ind] += (high - low + 1) * lazy[ind]; 
-			// propogate the lazy update downwards
+			// propagate the lazy update downwards
 			// for the remaining nodes to get updated 
 			if(low != high) {
 				lazy[2*ind+1] += lazy[ind]; 
@@ -139,7 +139,7 @@ public:
 		// l low high r 
 		if(low>=l && high <= r) {
 			seg[ind] += val; 
-			// if a leaf node, it will have childrens
+			// if not a leaf node, it will have childrens
 			if(low != high) {
 				lazy[2*ind+1] += val; 
 				lazy[2*ind+2] += val; 
@@ -159,7 +159,7 @@ public:
 		// as the node will stay fresh and updated 
 		if(lazy[ind] != 0) {
 			seg[ind] += lazy[ind]; 
-			// propogate the lazy update downwards
+			// propagate the lazy update downwards
 			// for the remaining nodes to get updated 
 			if(low != high) {
 				lazy[2*ind+1] += lazy[ind]; 
@@ -207,10 +207,10 @@ public:
 	void update(int ind, int low, int high, int l, int r, 
 		int val) {
 		// update the previous remaining updates 
-		// and propogate downwards 
+		// and propagate downwards 
 		if(lazy[ind] != 0) {
 			seg[ind] = (high - low + 1) - seg[ind]; 
-			// propogate the lazy update downwards
+			// propagate the lazy update downwards
 			// for the remaining nodes to get updated 
 			if(low != high) {
 				lazy[2*ind+1] = !lazy[2*ind + 1]; 
@@ -251,7 +251,7 @@ public:
 		// as the node will stay fresh and updated 
 		if(lazy[ind] != 0) {
 			seg[ind] = (high - low + 1) - seg[ind]; 
-			// propogate the lazy update downwards
+			// propagate the lazy update downwards
 			// for the remaining nodes to get updated 
 			if(low != high) {
 				lazy[2*ind+1] = !lazy[2*ind + 1]; 
