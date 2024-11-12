@@ -22,10 +22,12 @@ void dfs(int v, int p)
     tout[v] = ++timer;
 }
 
+
 bool is_ancestor(int u, int v)
 {
     return tin[u] <= tin[v] && tout[u] >= tout[v];
 }
+
 
 int lca(int u, int v)
 {
